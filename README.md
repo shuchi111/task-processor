@@ -9,4 +9,3 @@ python worker.py
 ```
 
 The worker runs continuously and processes tasks every 5 seconds.
-

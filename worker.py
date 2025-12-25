@@ -1,9 +1,6 @@
 import time
 from datetime import datetime
 
-# Memory leak: This list grows forever
-processed_tasks = []
-
 
 def fetch_pending_tasks():
     """Simulate fetching tasks from a queue"""
@@ -35,7 +32,6 @@ def run_worker():
         
         for task in tasks:
             result = process_task(task)
-            processed_tasks.append(result)  # BUG: Never cleared!
             save_result(result)
         
         time.sleep(5)
@@ -44,4 +40,3 @@ def run_worker():
 if __name__ == "__main__":
     print("Starting background worker...")
     run_worker()
-
